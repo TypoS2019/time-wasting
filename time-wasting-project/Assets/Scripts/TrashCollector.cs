@@ -37,7 +37,7 @@ public class TrashCollector : MonoBehaviour
         LiftableObject temp = other.gameObject.GetComponent<LiftableObject>();
         if (temp != null)
         {
-            if (temp.parent == null)
+            if (temp.parent == null && temp.owner == this)
             {
                 GiveShit(temp);
                 liftableObject = temp.Pickup(transform);

@@ -8,7 +8,7 @@ public class LiftableObject : MonoBehaviour
 {
     [HideInInspector] public Rigidbody rb;
     public Transform parent;
-    [SerializeField] private TrashCollector owner;
+    [SerializeField] public TrashCollector owner;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float distance;
@@ -23,7 +23,7 @@ public class LiftableObject : MonoBehaviour
         if (parent != null)
         {
             rb.MovePosition(Vector3.Lerp(transform.position, parent.position + parent.forward * distance, Time.deltaTime * moveSpeed));
-            if (parent == owner.transform)
+            if (owner != null && parent == owner.transform)
             {
                 rb.MovePosition(Vector3.Lerp(transform.position, parent.position + parent.up, Time.deltaTime * moveSpeed));
             }
@@ -37,7 +37,7 @@ public class LiftableObject : MonoBehaviour
 
     public LiftableObject Pickup(Transform other)
     {
-        if (parent != owner.transform)
+        if (owner == null || parent != owner.transform)
         {
             rb.useGravity = false;
             parent = other;
