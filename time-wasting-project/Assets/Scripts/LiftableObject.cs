@@ -12,6 +12,7 @@ public class LiftableObject : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float rotateSpeed;
     [SerializeField] private float distance;
+    
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
