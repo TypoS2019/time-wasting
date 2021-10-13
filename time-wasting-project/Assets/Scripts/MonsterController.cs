@@ -61,7 +61,7 @@ public class MonsterController : MonoBehaviour
         while (true)
         {
             agent.SetDestination(playerTransform.position);
-            if (Vector3.Distance(playerTransform.position, transform.position) <= stopChaseDistance)
+            if (Vector3.Distance(playerTransform.position, transform.position) >= stopChaseDistance)
             {
                 StartCoroutine(Patrol(NewTarget()));
                 yield break;

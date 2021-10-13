@@ -20,11 +20,14 @@ public class TrashCollector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         transform = GetComponent<Transform>();
     }
     
     public void GiveShit(LiftableObject shit)
     {
+        liftableObject = shit;
+        Debug.Log(receiveClip);
         audioSource.clip = receiveClip;
         audioSource.Play();
     }
@@ -36,6 +39,7 @@ public class TrashCollector : MonoBehaviour
         {
             if (temp.parent == null)
             {
+                GiveShit(temp);
                 liftableObject = temp.Pickup(transform);
             }   
         }

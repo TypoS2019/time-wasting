@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class LiftableObject : MonoBehaviour
 {
-    public Rigidbody rb;
+    [HideInInspector] public Rigidbody rb;
     public Transform parent;
     [SerializeField] private TrashCollector owner;
     [SerializeField] private float moveSpeed;
