@@ -1862,11 +1862,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 347854007, guid: ce9264447e23e7645ab64d9caf583abd, type: 3}
       propertyPath: m_Intensity
-      value: 14
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 347854007, guid: ce9264447e23e7645ab64d9caf583abd, type: 3}
+      propertyPath: m_InnerSpotPercent
+      value: 55.3
       objectReference: {fileID: 0}
     - target: {fileID: 347854008, guid: ce9264447e23e7645ab64d9caf583abd, type: 3}
       propertyPath: m_Intensity
-      value: 2048
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 347854008, guid: ce9264447e23e7645ab64d9caf583abd, type: 3}
+      propertyPath: m_SpotAngle
+      value: 62.9
       objectReference: {fileID: 0}
     - target: {fileID: 6093771468127621174, guid: ce9264447e23e7645ab64d9caf583abd, type: 3}
       propertyPath: clearColorMode
